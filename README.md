@@ -23,5 +23,5 @@ axios
 react-router-dom
 
 
-The static files were deployed to an AWS s3 bucket which has the web hosting property enabled. 
+After builgin the app, the static files were deployed to an AWS s3 bucket which has the web hosting property enabled. 
 The domain used for cuturl.workl was bought in GoDaddy.
