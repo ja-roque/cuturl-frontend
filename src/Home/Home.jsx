@@ -9,7 +9,9 @@ function template() {
       
       <h1>Small Links for great business</h1>
       <p className="text-white">Create and share trusted powerful short links</p>
-      <p className="text-white">Enter your looong url below and click submit!</p>
+      <p className="text-white">Enter your looong url below and click submit!</p>      
+
+      {this.alert}
 
       <form class="my-2 my-lg-0 w-60 d-flex " onSubmit={(e) => e.preventDefault()}>
         <input class="form-control w-60 m-2" type="text" placeholder="Enter your looooooooooong url" aria-label="Search"
@@ -17,7 +19,7 @@ function template() {
           value={this.state.url}
           onChange={e => this.handleChange(e)} 
         />
-        <button class="btn btn-danger m-2" type="submit" onClick={(e) => {this.submit(this.state.url)}}>Search</button>
+        <button class="btn btn-danger m-2" type="submit" onClick={(e) => {this.submit(this.state.url)}}>Submit</button>
       </form>
       
       <TopHundred />
