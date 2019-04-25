@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import Header from './Header' 
-import Home from './Home' 
+import Home from './Home'
+import axios from "axios";
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <Router>
         <div>
           <Header />
-          
-          <Route exact path="/" component={Home} />
-
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route component={Redirect} />
+          </Switch>
         </div>
       </Router>
     </div>
@@ -24,6 +26,21 @@ function App() {
 
 function About() {
   return <h2>About</h2>;
+}
+
+function Redirect() {
+  redirectToLongUrl()
+  return <h2>Redirecting...</h2>;
+}
+
+async function redirectToLongUrl() {
+    let response;
+    try {
+      response = await axios.get('https://cuturlapp.herokuapp.com/' + window.location.pathname)
+      window.location.replace(response.data.long_url)
+    } catch (error) {
+      console.error(error)
+    }
 }
 
 export default App;
