@@ -39,6 +39,7 @@ async function redirectToLongUrl() {
       response = await axios.get('https://cuturlapp.herokuapp.com/' + window.location.pathname)
       window.location.replace(response.data.long_url)
     } catch (error) {
+      window.location.replace('/')
       console.error(error)
     }
 }

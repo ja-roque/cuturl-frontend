@@ -14,7 +14,7 @@ function template() {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">          
-            <Link class="nav-item nav-link active"  to='/'>Home <span class="sr-only">(current)</span></Link>
+            <Link class="nav-item nav-link active"  to='/'>Home</Link>
             <Link class="nav-item nav-link"  to={`/About`}>About</Link>            
           </div>
         </div>
